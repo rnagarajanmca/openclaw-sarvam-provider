@@ -374,8 +374,8 @@ openclaw agent --model "sarvam/sarvam-m" --verbose --message "Test query"
 ### 5. A/B Test Models
 ```bash
 # Test both models with same query
-openclaw agent --model "sarvam/sarvam-lite" --message "Explain AI in simple terms" > test_lite.txt
-openclaw agent --model "sarvam/sarvam-pro" --message "Explain AI in simple terms" > test_pro.txt
+openclaw agent --model "sarvam/sarvam-lite" --message "Explain technology in simple terms" > test_lite.txt
+openclaw agent --model "sarvam/sarvam-pro" --message "Explain technology in simple terms" > test_pro.txt
 ```
 
 ## 🔍 Troubleshooting

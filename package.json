@@ -25,10 +25,11 @@
   "keywords": [
     "openclaw",
     "sarvam",
-    "sarvam-ai",
-    "ai-provider",
-    "llm",
-    "chat-completion"
+    "sarvam-provider",
+    "language-models",
+    "chat-completion",
+    "indian-languages",
+    "wiki-grounding"
   ],
   "author": "",
   "license": "MIT",

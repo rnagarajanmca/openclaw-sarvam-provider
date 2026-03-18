@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Demo Script: Model Switching with OpenClaw Sarvam AI Provider
-# This script demonstrates how to switch between different Sarvam AI models
+# Demo Script: Model Switching with OpenClaw Sarvam Provider
+# This script demonstrates how to switch between different Sarvam models
 
-echo "🔄 OpenClaw Sarvam AI Provider - Model Switching Demo"
+echo "🔄 OpenClaw Sarvam Provider - Model Switching Demo"
 echo "======================================================"
 echo ""
 
@@ -14,9 +14,9 @@ if ! command -v openclaw &> /dev/null; then
     exit 1
 fi
 
-# Check if Sarvam AI provider is installed
+# Check if Sarvam provider is installed
 if ! npm list -g openclaw-sarvam-provider &> /dev/null; then
-    echo "❌ Sarvam AI provider is not installed. Please install it first:"
+    echo "❌ Sarvam provider is not installed. Please install it first:"
     echo "   npm install -g openclaw-sarvam-provider"
     exit 1
 fi

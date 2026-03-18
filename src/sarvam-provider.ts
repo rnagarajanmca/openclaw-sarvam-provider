@@ -160,7 +160,7 @@ export function buildSarvamProvider() {
   return {
     id: "sarvam",
     label: "Sarvam",
-    description: "Indian AI company with strong multilingual support and wiki_grounding",
+    description: "Indian language models with strong multilingual support and wiki_grounding",
     docsPath: "https://docs.sarvam.ai/api-reference-docs/chat/chat-completions",
     envVars: ["SARVAM_API_KEY"],
     defaultModel: "sarvam/sarvam-m",  // Users can switch to sarvam-lite or sarvam-pro

@@ -1,0 +1,8 @@
+# bun configuration
+[install]
+# Enable exact versions for consistency
+exact = true
+
+[install.cache]
+# Cache directory
+dir = "~/.bun/install/cache"
