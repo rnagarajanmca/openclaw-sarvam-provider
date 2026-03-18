@@ -16,7 +16,9 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "allowImportingTsExtensions": false
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist", "test"]

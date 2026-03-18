@@ -1,8 +1,40 @@
-import type {
-  ProviderRuntimeModel,
-  ProviderStreamContext,
-  ProviderStreamFn,
-} from "openclaw/plugin-sdk/core";
+// Define local types that mirror openclaw types for standalone usage
+// This makes the package work without requiring openclaw to be installed
+export interface ProviderRuntimeModel {
+  id: string;
+  provider: string;
+  name: string;
+  description: string;
+  context: number;
+  pricing: {
+    input: number;
+    output: number;
+  };
+  capabilities: {
+    text: boolean;
+    vision: boolean;
+    tools: boolean;
+    streaming: boolean;
+  };
+  features?: Record<string, string>;
+}
+
+export interface ProviderStreamContext {
+  auth?: any;
+  request?: any;
+  messages?: Array<{
+    role: string;
+    content: string;
+  }>;
+  modelId?: string;
+  temperature?: number;
+  topP?: number;
+  maxTokens?: number;
+  options?: Record<string, any>;
+  streamFn?: () => AsyncGenerator<string>;
+}
+
+export type ProviderStreamFn = () => AsyncGenerator<string>;
 
 /**
  * Sarvam API Configuration
