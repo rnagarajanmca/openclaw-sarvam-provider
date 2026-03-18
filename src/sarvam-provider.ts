@@ -79,7 +79,7 @@ export interface SarvamStreamChunk {
  * Default Sarvam configuration
  */
 const DEFAULT_SARVAM_CONFIG: Partial<SarvamConfig> = {
-  baseURL: "https://api.sarvam.ai",
+  baseURL: "https://api.sarvam.ai/v1",
   model: "sarvam-m",
 };
 
@@ -194,7 +194,7 @@ export function buildSarvamProvider() {
         );
       }
 
-      return response.json();
+      return (response.json() as unknown) as SarvamResponse;
     },
 
     /**
