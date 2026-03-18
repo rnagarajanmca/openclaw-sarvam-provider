@@ -1,0 +1,45 @@
+{
+  "id": "sarvam",
+  "name": "Sarvam Provider",
+  "description": "Sarvam provider with wiki_grounding support and strong Indian language capabilities",
+  "version": "1.0.0",
+  "author": "",
+  "license": "MIT",
+  "repository": "https://github.com/rnagarajanmca/openclaw-sarvam-provider",
+  "homepage": "https://github.com/rnagarajanmca/openclaw-sarvam-provider#readme",
+  "openclaw": {
+    "minVersion": "2026.3.14",
+    "extensions": ["./dist/index.js"],
+    "capabilities": {
+      "chat": true,
+      "streaming": true,
+      "wiki_grounding": true,
+      "indian_languages": true
+    },
+    "models": [
+      {
+        "id": "sarvam/sarvam-m",
+        "name": "Sarvam M",
+        "provider": "sarvam",
+        "capabilities": ["text", "streaming", "wiki_grounding"]
+      }
+    ]
+  },
+  "configuration": {
+    "auth": {
+      "type": "api-key",
+      "envVar": "SARVAM_API_KEY",
+      "documentation": "https://docs.sarvam.ai"
+    },
+    "defaultModel": "sarvam/sarvam-m",
+    "supportedFeatures": [
+      "wiki_grounding",
+      "streaming",
+      "temperature",
+      "top_p",
+      "max_tokens",
+      "frequency_penalty",
+      "presence_penalty"
+    ]
+  }
+}
