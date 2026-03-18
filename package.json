@@ -37,21 +37,12 @@
     "type": "git",
     "url": "git+https://github.com/rnagarajanmca/openclaw-sarvam-provider.git"
   },
-  "peerDependencies": {
-    "openclaw": ">=2026.3.14"
-  },
-  "peerDependenciesMeta": {
-    "openclaw": {
-      "optional": true
-    }
-  },
   "devDependencies": {
     "@types/node": "^22.0.0",
     "typescript": "^5.9.3",
     "vitest": "^4.1.0",
     "prettier": "^3.4.2",
-    "eslint": "^9.18.0",
-    "openclaw": ">=2026.3.14"
+    "eslint": "^9.18.0"
   },
   "files": [
     "dist/**/*",
