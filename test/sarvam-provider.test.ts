@@ -11,7 +11,8 @@ describe("Sarvam Provider", () => {
     it("should validate valid UUID-like API keys", () => {
       const validKeys = [
         "123e4567-e89b-12d3-a456-426614174000",
-        "ABC12345-DEF6-7890-GHIJ-KLMN0PQR9STU",
+        "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+        "00000000-0000-0000-0000-000000000000",
       ];
       validKeys.forEach((key) => {
         expect(validateSarvamApiKey(key)).toBe(true);

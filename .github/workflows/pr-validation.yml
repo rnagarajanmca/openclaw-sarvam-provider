@@ -1,7 +1,10 @@
 name: PR Validation
 
 on:
-  # Manual trigger for PR validation
+  # Automatic trigger on PR create/update
+  pull_request:
+    types: [opened, synchronize, reopened]
+  # Manual trigger for testing
   workflow_dispatch:
 
 jobs:

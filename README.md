@@ -21,7 +21,6 @@
 ## Requirements
 
 - **Node.js**: ≥22.16.0
-- **OpenClaw**: ≥2026.3.14 (optional - for OpenClaw integration)
 - **Sarvam API Key**: Get one at [docs.sarvam.ai](https://docs.sarvam.ai)
 
 ## Installation
