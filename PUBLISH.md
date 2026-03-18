@@ -253,9 +253,41 @@ git push origin main --tags
 5. Description: Add release notes
 6. Publish release
 
-### Add GitHub Actions (Optional)
+### Add GitHub Actions (Automatic Publishing)
 
-Create `.github/workflows/publish.yml`:
+The repository includes automatic publishing via GitHub Actions. The workflow in `.github/workflows/npm-publish.yml` will automatically publish to npm when code is merged into the main branch.
+
+**Setup Requirements:**
+
+1. **Create NPM Token:**
+   - Go to [npmjs.com](https://www.npmjs.com/) and log in
+   - Navigate to **Access Tokens** → **Generate New Token**
+   - Select **Automation** token type
+   - Name it appropriately (e.g., "OpenClaw Sarvam Provider GitHub Actions")
+   - Copy the generated token
+
+2. **Add Token to GitHub:**
+   - Go to your GitHub repository settings
+   - Navigate to **Secrets and variables** → **Actions**
+   - Click **New repository secret**
+   - Name: `NPM_TOKEN`
+   - Value: Paste your npm automation token
+   - Click **Add secret**
+
+**How It Works:**
+
+The workflow automatically:
+- Triggers when you push to the `main` branch
+- Checks out the code
+- Sets up Node.js v22
+- Installs dependencies
+- Runs tests
+- Builds the project
+- Publishes to npm if all steps pass
+
+**Manual Publishing:**
+
+If you need to publish manually instead of using the automatic workflow:
 
 ```yaml
 name: Publish to npm
@@ -268,8 +300,8 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 22
           registry-url: 'https://registry.npmjs.org'
@@ -279,8 +311,6 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 ```
-
-Add `NPM_TOKEN` as a secret in your GitHub repository settings.
 
 ## Post-Publishing Tasks
 
