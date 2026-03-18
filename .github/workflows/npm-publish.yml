@@ -1,14 +1,12 @@
 name: Build and Publish to npm
 
 on:
-  # Manual trigger for testing and deployment
+  # Automatic trigger when merged to main
+  push:
+    branches:
+      - main
+  # Manual trigger for testing
   workflow_dispatch:
-    inputs:
-      publish:
-        description: 'Publish to npm (only when ready)'
-        required: false
-        default: 'false'
-        type: boolean
 
 jobs:
   build-and-publish:
@@ -37,7 +35,8 @@ jobs:
         run: npm run build
 
       - name: Publish to npm
-        if: github.event.inputs.publish == 'true'
+        # Only publish when triggered by push to main (not manual workflow_dispatch)
+        if: github.event_name == 'push'
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
