@@ -1,9 +1,9 @@
 # OpenClaw Sarvam Provider
 
-[![npm version](https://badge.fury.io/js/openclaw-sarvam-provider.svg)](https://www.npmjs.com/package/openclaw-sarvam-provider)
+[![npm](https://img.shields.io/npm/v/openclaw-sarvam-provider)](https://www.npmjs.com/package/openclaw-sarvam-provider)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue)](https://www.typescriptlang.org/)
-[![Node.js](https://img.shields.io/node/v/openclaw-sarvam-provider)](https://nodejs.org/)
+[![Node](https://img.shields.io/node/v/openclaw-sarvam-provider)](https://nodejs.org/)
 
 **Official Sarvam provider for OpenClaw** - Enterprise-grade integration with wiki_grounding, strong Indian language support, and dynamic model switching.
 
