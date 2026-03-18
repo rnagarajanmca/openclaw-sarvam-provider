@@ -194,7 +194,7 @@ export function buildSarvamProvider() {
         );
       }
 
-      return (response.json() as unknown) as SarvamResponse;
+      return response.json();
     },
 
     /**
