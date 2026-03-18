@@ -1,9 +1,29 @@
-import { definePluginEntry } from "openclaw/plugin-sdk/core";
-import {
-  createProviderApiKeyAuthMethod,
-  type ProviderAuthResult,
-} from "openclaw/plugin-sdk/provider-auth";
+// Import openclaw dependencies with fallback
+let definePluginEntry: any;
+let createProviderApiKeyAuthMethod: any;
+let ProviderAuthResult: any;
+
+try {
+  const openclawCore = require("openclaw/plugin-sdk/core");
+  const openclawAuth = require("openclaw/plugin-sdk/provider-auth");
+  definePluginEntry = openclawCore.definePluginEntry;
+  createProviderApiKeyAuthMethod = openclawAuth.createProviderApiKeyAuthMethod;
+  ProviderAuthResult = openclawAuth.ProviderAuthResult;
+} catch (e) {
+  // Fallback for when openclaw is not installed
+  definePluginEntry = (config: any) => config;
+  createProviderApiKeyAuthMethod = (config: any) => config;
+  ProviderAuthResult = class {};
+}
+
 import { buildSarvamProvider, getSarvamApiKeyFromEnv, validateSarvamApiKey } from "./sarvam-provider.js";
+
+// Define ProviderAuthResult type for local use
+export type ProviderAuthResultType = {
+  providerId: string;
+  methodId: string;
+  config: any;
+};
 
 /**
  * Sarvam Plugin Entry Point
@@ -101,7 +121,7 @@ export default definePluginEntry({
           providerId: "sarvam",
           methodId: "api-key",
           config,
-        } as ProviderAuthResult;
+        } as ProviderAuthResultType;
       },
     });
   },
