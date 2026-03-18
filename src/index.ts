@@ -87,7 +87,7 @@ export default definePluginEntry({
 
         const config = {
           apiKey,
-          baseURL: "https://api.sarvam.ai",
+          baseURL: "https://api.sarvam.ai/v1",
           model: "sarvam-m",
         };
 
