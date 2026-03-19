@@ -1,6 +1,6 @@
 {
   "name": "openclaw-sarvam-provider",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Sarvam provider for OpenClaw with multiple models, wiki_grounding, and Indian language support",
   "type": "module",
   "main": "dist/index.js",
@@ -12,7 +12,9 @@
     }
   },
   "openclaw": {
-    "extensions": ["./dist/index.js"]
+    "extensions": [
+      "./dist/index.js"
+    ]
   },
   "scripts": {
     "build": "tsc",
